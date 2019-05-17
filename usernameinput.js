@@ -41,15 +41,15 @@ myname.innerHTML = "Hello" ;
 var store = document.getElementById("store");
 
 store.onclick = function(){
-   var helloname = prompt("Username","") ;
-   if(helloname!=null)
+   var helloname = prompt("Sure Want to save with the following details (type yes/no) ","No") ;
+   if(helloname=="yes")
    {   //if( String(helloname) == String(myname.innerText) )
        // {
         //    print() ;
        // }
       
        myname.innerHTML = (myname.innerText + "\n" + 
-                           " " + helloname + '\n' +
+                           " " + firstName.value + '\n' +
                            " " + Number(age.value) + '\n' + 
                            " " + dob.value + '\n' +
                            " " + gender.value + '\n' +
