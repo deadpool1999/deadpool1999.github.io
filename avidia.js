@@ -36,7 +36,7 @@ var anim_pg3=0, anim_img07=0,anim_img08=0,anim_img09=0,anim_index02=0 ;
 var anim_index07 = 0, anim_index08 = 0, anim_index09 = 0 ; 
 var anim_pg2img =0 , anim_pg3img=0 ;
 var anim_carousel=0, parallaxscroll_anim=0 ;
-var popup_anim = 0 ;
+var popup_anim = 0, container_anim = [0,0,0] ;
 
 /*function isElementInViewport(el){
     if(typeof jQuery === "function" && el instanceof jQuery ){
@@ -96,7 +96,11 @@ window.onload = function(){
     var popup1 = document.querySelector('.popup1') ;
     var popup = document.querySelector('.popupanim') ;
     var popuptext = document.getElementById('popuptext') ;
-
+    var container_left = document.querySelectorAll('.left') ;
+    var container_right = document.querySelectorAll('.right') ;
+    var container  = document.querySelector('.container') ;
+    var container_count_left = 0, container_count_right = 0, container_count = 0 ;
+    console.log(container_left.length)     ;
 
 
 
@@ -122,6 +126,63 @@ window.onload = function(){
             page3() ;
             anim_pg2 = 0 ;
         }
+        else if( document.documentElement.scrollTop >= 4400  && container_anim[0] == 0 )
+        {
+            // container animation...
+            // left container
+
+            var moveup = [
+                {
+                    transform : "translateY(100px)",
+                    opacity : 0
+                },
+                {
+                    transform : "translate(0px)",
+                    opacity : 1
+                }
+            ];
+    
+            container_left[0].animate(
+                moveup,
+                {
+                    duration : 1300,
+                    easing : 'ease-in-out'
+                }
+            );
+            container_left[0].style["opacity"] = 1 ;
+            container_anim[container_count] = 1 ;
+            container_count++ ;
+            console.log(container_count) ;
+            console.log(container_anim[container_count-1]) ;
+            setTimeout(
+                function(){ container_right[0].animate(
+                     moveup,
+                     {
+                         duration : 1300,
+                         easing : 'ease-in-out'
+                     }   
+                );  container_right[0].style["opacity"] = 1;  },
+                400
+
+            );
+            setTimeout(
+                function(){ container_left[1].animate(
+                     moveup,
+                     {
+                         duration : 1300,
+                         easing : 'ease-in-out'
+                     }   
+                ); container_left[1].style["opacity"] = 1 ; },
+                800
+
+            ); 
+
+
+        }
+
+        
+        
+
        else if(document.documentElement.scrollTop >=7650 && document.documentElement.scrollTop <=8400  )
         {
            //parallaxscroll1.style["z-index"] = "1" ;
@@ -220,6 +281,32 @@ window.onload = function(){
     {
        parallax.innerHTML += (event.clientX + "\n") ;
     }
+
+     
+    container.onmouseenter = function(){
+        var moveup = [
+            {
+                transform : "translateY(100px)",
+                opacity : 0
+            },
+            {
+                transform : "translate(0px)",
+                opacity : 1
+            }
+        ];
+
+        container_left.animate(
+            moveup,
+            {
+                duration : 1300,
+                easing : 'ease-in-out'
+            }
+        );
+
+    }
+
+
+
 
 
    
@@ -896,10 +983,10 @@ window.onload = function(){
         var el1 = document.getElementById('carousel-border') ;
         var el2 = document.getElementById('carousel-border') ;
         if(clc==0)   
-        document.getElementById('carousel-circle').innerHTML = "<img src='bb.jpg'>" ;
+        document.getElementById('carousel-circle').innerHTML = "<img src='https://lh6.googleusercontent.com/AzTfDO2q5ijRrGE05l329LMxFOGhhj1uPAvA7KHjJN_G7okOBOxl98h1ggUhfPuN50ZfuMwiJXbHxQ=w1366-h663'>" ;
         else if(clc==1)
         {
-            document.getElementById('carousel-circle').innerHTML = "<img src='bb1.jpg'>" ;   
+            document.getElementById('carousel-circle').innerHTML = "<img src='https://lh5.googleusercontent.com/-nFp8NaJMa1z2zxvWVWatakH3caMA28Z3aNjbxuVrUSjfw22COzEbn6fj3NcKiMjnzPam9yHjnaBqA=w1366-h663'>" ;   
             clc=-1;
         }
 
@@ -1037,7 +1124,7 @@ window.onload = function(){
         var el1 = document.getElementById('carousel-border') ;
         var el2 = document.getElementById('carousel-border') ;
         if(clc==0)   
-        {document.getElementById('carousel-circle').innerHTML = "<img src='bb.jpg'>" ;
+        {document.getElementById('carousel-circle').innerHTML = "<img src='https://lh6.googleusercontent.com/AzTfDO2q5ijRrGE05l329LMxFOGhhj1uPAvA7KHjJN_G7okOBOxl98h1ggUhfPuN50ZfuMwiJXbHxQ=w1366-h663'>" ;
           
         }
         else if(clc==1)
