@@ -983,10 +983,10 @@ window.onload = function(){
         var el1 = document.getElementById('carousel-border') ;
         var el2 = document.getElementById('carousel-border') ;
         if(clc==0)   
-        document.getElementById('carousel-circle').innerHTML = "<img src='https://lh6.googleusercontent.com/AzTfDO2q5ijRrGE05l329LMxFOGhhj1uPAvA7KHjJN_G7okOBOxl98h1ggUhfPuN50ZfuMwiJXbHxQ=w1366-h663'>" ;
+        document.getElementById('carousel-circle').innerHTML = "<img src='bb.jpg'>" ;
         else if(clc==1)
         {
-            document.getElementById('carousel-circle').innerHTML = "<img src='https://lh5.googleusercontent.com/-nFp8NaJMa1z2zxvWVWatakH3caMA28Z3aNjbxuVrUSjfw22COzEbn6fj3NcKiMjnzPam9yHjnaBqA=w1366-h663'>" ;   
+            document.getElementById('carousel-circle').innerHTML = "<img src='bb1.jpg'>" ;   
             clc=-1;
         }
 
@@ -1124,7 +1124,7 @@ window.onload = function(){
         var el1 = document.getElementById('carousel-border') ;
         var el2 = document.getElementById('carousel-border') ;
         if(clc==0)   
-        {document.getElementById('carousel-circle').innerHTML = "<img src='https://lh6.googleusercontent.com/AzTfDO2q5ijRrGE05l329LMxFOGhhj1uPAvA7KHjJN_G7okOBOxl98h1ggUhfPuN50ZfuMwiJXbHxQ=w1366-h663'>" ;
+        {document.getElementById('carousel-circle').innerHTML = "<img src='bb.jpg'>" ;
           
         }
         else if(clc==1)
