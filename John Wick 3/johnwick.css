@@ -1,0 +1,403 @@
+body {
+    top: 0 ;
+    left: 0 ;
+    background: url("bg.jpg") ;
+    background-size: 105% ;
+    transition-property: all ;
+    transition-timing-function: linear ;
+    
+    transition-duration: 1s ;
+    overflow: hidden;
+    
+}
+body h1{
+
+    position: relative ;
+    top: 60% ;
+    left: 30% ;
+    text-shadow: 5px 5px 10px rgb(255, 143, 190) ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+    font-stretch: semi-expanded ;
+    font-style: italic ;
+    
+    justify-content: center ;
+    align-items: center ;
+    color: white ;
+}
+.dropdown{
+    position: fixed;
+    top: 0;
+    left: 0;
+   z-index: 1 ;
+}
+.dropdown .toggler{
+    position: absolute ;
+    top: 0 ;
+    left: 50% ;
+    z-index: 2;
+    cursor: pointer ;
+    width: 50px ;
+    height: 30px ;
+    opacity: 0;
+    transition: all 0.3s ease ;
+
+}
+
+.dropdown .hamburger{
+    position: absolute;
+    top: 0;
+    left: 40% ;
+    
+    width: 60px ;
+    height: inherit;
+    padding: 1rem ;
+    background: transparent ;
+    opacity: 0.8;
+    transition-property: all  ;
+    transition-duration: 1s ;
+
+
+}
+
+.dropdown .l1{
+    position: absolute ;
+    top: 0;
+    left: 40%;
+    width: 60px;
+    height: 60px ;
+    padding: 1rem ;
+    background: aqua ;
+    opacity: 0.4;
+    transition-property: all  ;
+    transition-duration: 0.4s ;
+
+   
+}
+.dropdown .l1 >div{
+    position: absolute;
+    top: 1.5rem ;
+    left: 0rem;
+    width: 100%;
+    height: 2px;
+    background: white ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    transform: rotate(45deg) (0.6);
+    transition-property: all  ;
+    transition-duration: 0.4s ;
+    opacity: 0;
+
+}
+.dropdown .l1 >div::after{
+    content: ' ' ;
+    position: relative;
+    top: 0 ;
+    left: 0rem;
+    width: 100%;
+    height: 2px;
+    background: white ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+    transform: rotate(90deg) ;
+    transition-property: all  ;
+    transition-duration: 0.4s ;
+}
+
+
+.dropdown .hamburger > div{
+    position: relative;
+    width: 100% ;
+    height: 2px ;
+    background: white ;
+    display: flex;
+    align-items: center ;
+    justify-content: center ;
+    opacity: 1;
+    transition-property: all  ;
+    transition-duration: 0.4s ;
+
+}
+.dropdown .hamburger > div::after,
+.dropdown .hamburger > div::before {
+
+    content: ' ' ;
+    position: absolute ;
+    z-index: 1;
+    width: 100% ;
+    height: 2px ;
+    margin-top: -10px ;
+    background: white ;
+    display: flex;
+    align-items: center ;
+    justify-content: center ;
+    transition-property: all  ;
+    transition-duration: 0.2s ;
+}
+.dropdown .hamburger > div::after{
+
+   top: 20px ;
+   transition-property: all  ;
+    transition-duration: 0.1s ;
+}
+.dropdown .menu{
+    margin-top: 50% ;
+    
+    visibility: hidden ;
+    opacity: 0;
+    transition-property: all ;
+    transition-duration: 0.8s ; 
+}
+.dropdown .menu .menuitms >li >a{
+    color: rgb(255, 0, 0) ;
+    
+    text-decoration: none ;
+}
+#menuitems {
+    position: relative;
+    background : black ;
+    list-style: none;
+    
+    text-align: center ;
+    
+    padding: 10% ;
+     
+    transition-property: all  ;
+    transition-duration: 0.6s ;
+    z-index: -1;
+    height: 100px;
+    width: 100px ;
+    margin-left: 100% ;
+    opacity: 0.2;
+    display: flex ;
+    flex-direction: column ;
+    
+    
+
+}
+.dropdown .toggler:checked + .hamburger>div{
+    transform: rotate(135deg);
+    top: 1.5rem ;
+    left: 0rem;
+}
+.dropdown .toggler:checked + .hamburger>div::after{
+  
+   transform: rotate(-90deg) ;
+    
+    top: 0.7rem ;
+    left: -0.5%;
+}
+.dropdown .toggler:checked + .hamburger>div::before{
+    opacity: 0;
+
+}
+.dropdown .toggler:checked + .hamburger{
+    height: 40px;
+    transform: translateY(20px) ;
+    
+}
+
+.dropdown .toggler:checked {
+   height: 60px;
+   transform: translateY(20px) ;
+}
+.dropdown .toggler:checked ~ .menu{
+
+    visibility: visible ;
+    opacity: 1;
+    transform: translateY(500px) translateX(-800px) scale(13) ;
+}
+.dropdown .menu .menuitms >li >a:hover{
+    color: aqua ;
+}
+
+
+
+#rt1{
+    height: 60px ;
+    width: 250px ;
+    position: absolute ;
+    top: 100px ;
+    left: 30px;
+}
+#rt2{
+    width: 20% ;
+    height: 40px;
+    position: absolute ;
+    top: 170px ;
+    left: 30px;
+}
+#rt3{
+    
+    height: 45px;
+    position: absolute ;
+    top: 130px ;
+    left: 300px;
+}
+.carousel1{
+    
+    
+    background-image: url("./promo_continental.jpg") ;
+    position: absolute ;
+    background-size: 100% ;
+    
+    height: 150px;
+    width: 150px;
+    top: 300px ;
+    left: 100px ;
+    transition-property: all ;
+    transition-duration: 2s ;
+    
+}
+#carouseltext1{
+    opacity: 0;
+    position: relative;
+    justify-content: center ;
+    align-items: center ;
+    top: 80px ;
+    left: 30px ;
+    color: white;
+
+    transition-property: all ;
+    transition-duration: 2s ;
+}
+#carouseltext2{
+    opacity: 0;
+    position: absolute ;
+    justify-content: center ;
+    align-items: center ;
+    top: 80px ;
+    left: 30px ;
+    color: white;
+    transition-property: all ;
+    transition-duration: 2s ;
+}
+#carouseltext3{
+    opacity: 0;
+    position: absolute ;
+    justify-content: center ;
+    align-items: center ;
+    top: 80px ;
+    left: 30px ;
+    color: white;
+    
+    transition-property: all ;
+    transition-duration: 2s ;
+}
+
+.carouselpoints{
+    position: relative ;
+    top: 450px ;
+    left: 120px ;
+    
+    opacity: 0.5;
+    display: flex ;
+    justify-content: flex-start ;
+    
+    align-items: center ;
+    
+}
+#pt1{
+   background-color: grey ;
+   opacity: 0.6;
+   height: 15px ;
+   width: 5px ;
+   color: transparent ;
+   border: solid black ;
+   border-radius: 50% ; 
+   cursor: pointer;
+   transition-property: all ;
+   transition-duration: 1s ;
+}
+#pt2{
+    position: relative; 
+    left: 10px ; 
+    background-color: grey;
+    opacity: 0.6;
+    height: 15px ;
+    width: 5px ;
+    color: transparent ;
+    border: solid black ;
+    border-radius: 50% ;
+    cursor: pointer; 
+ }
+ #pt3{
+  
+    position: relative;
+    left: 20px ;
+    background-color: grey ;
+    opacity: 0.6;
+    height: 15px ;
+    width: 5px ;
+    color: transparent ;
+    border: solid black ;
+    border-radius: 50%  ;
+    cursor: pointer; 
+ }
+
+.pt1 :checked ~ .pt1{
+    background-color: white ;
+    transform: translateX(20px) ;
+}
+.reviews{
+    position: relative;
+    top: 0px ;
+    left: 80% ;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    font-size: 30px ;
+    font-style: italic ;
+    font-stretch: expanded ;
+    text-shadow: 5px 5px 10px pink ;
+    color: white ;
+    align-self: auto ;
+    align-items: center ;   
+    justify-content: center ;
+    height: 200px !important ;
+    width: 200px !important ;
+    overflow: hidden ;
+    transition-property: all ;
+    transition-duration: 1s ;
+    
+}
+.review1{
+
+    content: "ONE OF THE BEST DAMN TRILOGIES EVER MADE";
+    position: relative ;
+    width: 200px ;
+    font-size: 30px ;
+    align-items: center ;   
+    justify-content: center ;
+
+    transition-property: all ;
+    transition-duration: 2s ;
+}
+.review2{
+
+    position: relative;
+    top: 0 ;
+    width: 200px ;
+    margin-top: -5px ;
+    font-size: 30px ;
+    align-items: center ;   
+    justify-content: center ;
+    transition-property: all ;
+    transition-duration: 2s ;
+}
+.review3{
+
+    position: relative;
+    top: 0 ;
+    width: 200px ;
+    font-size: 30px ;
+    align-items: center ;   
+    justify-content: center ;
+    transition-property: all ;
+    transition-duration: 2s ;
+}
+.toggler:checked ~ .reviews{
+
+    
+    opacity: 0;
+    transform: translateY(-200px) ;
+}
