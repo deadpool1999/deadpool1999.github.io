@@ -122,7 +122,7 @@ window.onload = function(){
             page2() ;
            
         }
-        else if(document.documentElement.scrollTop >=900 && document.documentElement.scrollTop <=1800 ) {
+        else if(document.documentElement.scrollTop >=1200 && document.documentElement.scrollTop <=1800 ) {
             page3() ;
             anim_pg2 = 0 ;
         }
